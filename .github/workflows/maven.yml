@@ -30,14 +30,15 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: deploy changes to a repo
-      uses: tagus/git-deploy@v0.4.3
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        changes: public
-        repository: git@github.com:SeifMonsef20/deployedRepo.git
-        ssh_key: ${{ secrets.REPO_DEPLOY_KEY }}
-        name: SeifMonsef20
-        email: seif.monsef@gmail.com
-        clean_repo: true
+        source-directory: 'output'
+        destination-github-username: 'SeifMonsef20'
+        destination-repository-name: 'deployedRepo'
+        user-email: seif.monsef@gmail.com
+        target-branch: main
 
    
