@@ -37,7 +37,7 @@ jobs:
       with:
         source-directory: '.'
         destination-github-username: 'SeifMonsef20'
-        destination-repository-name: 'deployedRepo'
+        destination-repository-name: 'my-project'
         user-email: seif.monsef@gmail.com
         target-branch: main
 
