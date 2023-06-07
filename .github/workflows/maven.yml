@@ -35,7 +35,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: 'output'
+        source-directory: '.'
         destination-github-username: 'SeifMonsef20'
         destination-repository-name: 'deployedRepo'
         user-email: seif.monsef@gmail.com
